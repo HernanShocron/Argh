@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Pedido {
-	private int 					nroPedido;
-	private Date					fechaPedido;
-	private Mesa 					mesa;
-	private ArrayList<LineaPedido> 	pedidos;
-	private float					total;
+	private int nroPedido;
+	private String estado;
+	private Mesa mesa;
+	private ArrayList<LineaPedido> lineasPedido;
+	private float total;
 	
 	//Getters & Setters
 	public int getNroPedido() {
@@ -17,11 +17,11 @@ public class Pedido {
 	public void setNroPedido(int nroPedido) {
 		this.nroPedido = nroPedido;
 	}
-	public Date getFechaPedido() {
-		return fechaPedido;
+	public String getEstado() {
+		return estado;
 	}
-	public void setFechaPedido(Date fechaPedido) {
-		this.fechaPedido = fechaPedido;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	public Mesa getMesa() {
 		return mesa;
@@ -29,17 +29,25 @@ public class Pedido {
 	public void setMesa(Mesa mesa) {
 		this.mesa = mesa;
 	}
-	public ArrayList<LineaPedido> getPedidos() {
-		return pedidos;
+	public ArrayList<LineaPedido> getLineasPedido() {
+		return lineasPedido;
 	}
-	public void setPedidos(ArrayList<LineaPedido> pedidos) {
-		this.pedidos = pedidos;
+	public void setPedidos(ArrayList<LineaPedido> lineasPedido) {
+		this.lineasPedido = lineasPedido;
 	}
 	public float getTotal() {
 		return total;
 	}
 	public void setTotal(float total) {
 		this.total = total;
+	}
+	
+	//Métodos
+	public void calcularTotal() {
+		total = 0;
+		for(LineaPedido lp: lineasPedido) {
+			total=+ lp.calcularSubTotal();
+		}
 	}
 	
 }

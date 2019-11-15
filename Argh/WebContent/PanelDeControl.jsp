@@ -42,7 +42,7 @@
 						<button class="BTNPANEL" >Productos</button>
 					</a>
 					<a href="MesasYMozos.jsp" target="iframeprincipal" >	
-						<button class="BTNPANEL" OnClick="mesasYMozos()">Mesas Y Mozos</button>
+						<button class="BTNPANEL" >Mesas Y Mozos</button>
 					</a>
 					<a href="Pedidos.jsp" target="iframeprincipal">
 						<button class="BTNPANEL" >Pedidos</button>

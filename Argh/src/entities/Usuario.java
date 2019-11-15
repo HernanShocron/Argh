@@ -2,15 +2,9 @@ package entities;
 
 import java.util.Date;
 
-public class Usuario extends Persona {
-	private String 	user,
-					pass,
-					domicilio,
-					dni,
-					tel;
-	private Date 	fechaNac,
-					fechaReg;
-		
+public class Usuario{
+	private String 	user, pass, email, tel, nombre, apellido;
+
 	//Getters & Setters
 	public String getUser() {
 		return user;
@@ -24,17 +18,11 @@ public class Usuario extends Persona {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public String getDomicilio() {
-		return domicilio;
+	public String getEmail() {
+		return email;
 	}
-	public void setDomicilio(String domicilio) {
-		this.domicilio = domicilio;
-	}
-	public String getDni() {
-		return dni;
-	}
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getTel() {
 		return tel;
@@ -42,16 +30,16 @@ public class Usuario extends Persona {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public Date getFechaNac() {
-		return fechaNac;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setFechaNac(Date fechaNac) {
-		this.fechaNac = fechaNac;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public Date getFechaReg() {
-		return fechaReg;
+	public String getApellido() {
+		return apellido;
 	}
-	public void setFechaReg(Date fechaReg) {
-		this.fechaReg = fechaReg;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 }

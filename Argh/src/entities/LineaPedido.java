@@ -1,9 +1,8 @@
 package entities;
 
 public class LineaPedido {
-	private Producto 	prod;
-	private int 		cant;
-	private float 		subtotal;
+	private Producto prod;
+	private int cant;
 	
 	//Getters & Setters
 	public Producto getProd() {
@@ -18,11 +17,12 @@ public class LineaPedido {
 	public void setCant(int cant) {
 		this.cant = cant;
 	}
-	public float getSubtotal() {
+	
+	//Métodos
+	public float calcularSubTotal() {
+		float subtotal =0;
+		subtotal= prod.getPrecio()*this.getCant();
 		return subtotal;
-	}
-	public void setSubtotal(float subtotal) {
-		this.subtotal = subtotal;
 	}
 	
 }

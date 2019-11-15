@@ -1,17 +1,18 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class Mesa {
-	private int 	id,
-					capacidad;
-	private String	estado,
-					sector;
+	private int nroMesa, capacidad;
+	private String estado;
+	private ArrayList<Pedido> pedidos;
 	
 	//Getters & Setters
-	public int getId() {
-		return id;
+	public int getNroMesa() {
+		return nroMesa;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setNroMesa(int nroMesa) {
+		this.nroMesa = nroMesa;
 	}
 	public int getCapacidad() {
 		return capacidad;
@@ -25,11 +26,10 @@ public class Mesa {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public String getSector() {
-		return sector;
+	public ArrayList<Pedido> getPedidos() {
+		return pedidos;
 	}
-	public void setSector(String sector) {
-		this.sector = sector;
+	public void setPedidos(ArrayList<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
-	
 }
