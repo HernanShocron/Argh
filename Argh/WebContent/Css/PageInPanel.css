@@ -1,0 +1,64 @@
+body{
+	background-color: silver;
+	background: url(../Imagenes/fondo.png);
+	background-repeat: no-repeat;
+	background-position: 10% 15%;
+	background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        padding-left: 5%;	
+}
+
+div{
+	text-align: left;
+	color: white;
+	background-color:rgba(207,37,0,0.8);
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 2%;
+	padding-right: 2px;
+	border-radius: 5px;
+	width:90%;
+	margin:10px;
+}
+
+table{
+	border: 10px;
+	border-color: black;
+}
+th,td{
+	padding-right: 10px;
+}
+
+table {
+	border-collapse: collapse;
+	width:100%;
+}
+table th{
+	text-align:left;
+	background-color: #3a6070;
+	color:white;
+	padding: 4px 30px 4px 8px;
+}
+
+table td{
+	/*background-color: white; */
+	border: 1px solid #e3e3e3;
+	padding: 4px 8px;
+	/*color:black; */
+	cursor: pointer;
+	font:bold 15px "Trebuchet MS";
+	align: left;
+}
+/* td:hover{ Resaltar una celda
+	background-color:green;
+	color:blue;
+} */
+table .selected{
+	background-color:red;
+	color: white;
+}
+/* table tr:nth-child(odd) td{
+	background-color: #e7edf0; 
+}  */
