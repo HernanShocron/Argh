@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `evento`;
 CREATE TABLE `evento` (
   `idEvento` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` date NOT NULL,
-  `descripcion` varchar(300) DEFAULT NULL,
+  `lugar` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`idEvento`),
   UNIQUE KEY `idEvento_UNIQUE` (`idEvento`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

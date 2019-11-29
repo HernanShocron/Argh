@@ -7,7 +7,7 @@ import java.util.Date;
 public class Evento {
 	private int	id;
 	private Date fecha;
-	private String desc;
+	private String lugar;
 	private ArrayList<Mesa> mesas;
 	private ArrayList<Mozo> mozos;
 	private ArrayList<Producto> productos;
@@ -25,11 +25,11 @@ public class Evento {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	public String getDesc() {
-		return desc;
+	public String getLugar() {
+		return lugar;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setLugar(String lugar) {
+		this.lugar = lugar;
 	}
 	public ArrayList<Mesa> getMesas() {
 		return mesas;
@@ -49,32 +49,34 @@ public class Evento {
 	public void setProductos(ArrayList<Producto> productos) {
 		this.productos = productos;
 	}
-		
-	//Métodos 
-	public String getDia() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd");
-		String dia = sdf.format(fecha);
-		return dia;
-	}
-	public String getMes() {
-		SimpleDateFormat sdf = new SimpleDateFormat("MM");
-		String mes = sdf.format(fecha);
-		return mes;
-	}
-	public String getAño() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-		String año = sdf.format(fecha);
-		return año;
-	}
 	
-	public float cerrarCaja(ArrayList<Mesa> mesas) {
-		float total=0;
-		for(Mesa m: mesas) {
-			ArrayList<Pedido> pedidos = m.getPedidos();
-			for(Pedido p: pedidos) {
-				total+= p.getTotal();
-			}
+	//Métodos 
+		public String getDia() {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd");
+			String dia = sdf.format(fecha);
+			return dia;
 		}
-		return total;
-	}
+		public String getMes() {
+			SimpleDateFormat sdf = new SimpleDateFormat("MM");
+			String mes = sdf.format(fecha);
+			return mes;
+		}
+		public String getAño() {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+			String año = sdf.format(fecha);
+			return año;
+		}
+		
+		public float cerrarCaja(ArrayList<Mesa> mesas) {
+			float total=0;
+			for(Mesa m: mesas) {
+				ArrayList<Pedido> pedidos = m.getPedidos();
+				for(Pedido p: pedidos) {
+					total+= p.getTotal();
+				}
+			}
+			return total;
+		}
+		
+	
 }

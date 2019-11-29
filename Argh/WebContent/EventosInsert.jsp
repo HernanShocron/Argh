@@ -10,18 +10,19 @@
 <body>
 	<div class="form">
 		<h2>Agregar Evento</h2>
+		<div style="backgroun: red;">
+		<% if (request.getParameter("error")!=null){
+			out.println(request.getParameter("error"));}%>
+		</div>
 		<form action="EventosServlet" method="post">
 		    <table>
 		        <tr>
 		            <th>Fecha:</th>
-		            <td><input type="text" name="año" size="4">/<input type="text" name="mes" size="2">/<input type="text" name="dia" size="2"></td>
+		            <td><input type="text" name="año" size="4" placeholder="AAAA">/<input type="text" name="mes" size="2" placeholder="MM">/<input type="text" name="dia" size="2" placeholder="DD"></td>
 		        </tr>
 		        <tr>
-		            <th>Descripcion:</th>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td colspan="2"><textarea name="desc" cols="60" rows="10"></textarea></td>
+		            <th>Lugar:</th>
+		            <td><input type="text" name="lugar" placeholder=""></td>
 		        </tr>
 		        <tr>
 		        	<td></td>

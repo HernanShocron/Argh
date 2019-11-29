@@ -19,22 +19,20 @@
 		<form action="EventosServlet" method="post">			
 			<table>
 			<tr>
-				<th>Id</th>
-				<th>Fecha</th>
-				<th>Descripcion</th>
-				<th>Acción</th>
+				<th >Fecha</th>
+				<th >Lugar</th>
+				<th >Acción</th>
 			</tr>
 			<% 
-			EventoData ed = new EventoData(); 
+			EventoData ed = new EventoData();
 			ArrayList<Evento> list = ed.getAll();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 			for(Evento l: list){%>
 				<tr>
-					<td><%= Integer.toString(l.getId())%></td>
-					<td><%= sdf.format(l.getFecha())%></td>
-					<td><%= l.getDesc()%></td>
-					<td><button type="submit" value="<%=Integer.toString(l.getId())%>" name="modificar">Modificar</button>
-					<button type="submit" value="<%=Integer.toString(l.getId())%>" name="eliminar">Eliminar</button></td>
+					<td ><%= sdf.format(l.getFecha())%></td>
+					<td ><%= l.getLugar() %></td>
+					<td ><div class="acciones"><button type="submit" value="<%=Integer.toString(l.getId())%>" name="modificar">Modificar</button>
+					<button type="submit" value="<%=Integer.toString(l.getId())%>" name="eliminar" style="float: right;">Eliminar</button></div></td>
 				</tr>			
 			<%}%>
 			</table>

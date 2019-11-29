@@ -22,7 +22,7 @@ public class EventoData {
 		rs.next();
 		event.setId(rs.getInt("idEvento"));
 		event.setFecha(rs.getDate("fecha"));
-		event.setDesc(rs.getString("descripcion"));
+		event.setLugar(rs.getString("lugar"));
 		rs.close();
 		pstmt.close();
 		c.getConnection().close();
@@ -41,7 +41,7 @@ public class EventoData {
 		rs.next();
 		event.setId(rs.getInt("idEvento"));
 		event.setFecha(rs.getDate("fecha"));
-		event.setDesc(rs.getString("descripcion"));
+		event.setLugar(rs.getString("lugar"));
 		rs.close();
 		pstmt.close();
 		c.getConnection().close();
@@ -60,7 +60,7 @@ public class EventoData {
 			Evento event = new Evento();
 			event.setId(rs.getInt("idEvento"));
 			event.setFecha(rs.getDate("fecha"));
-			event.setDesc(rs.getString("descripcion"));
+			event.setLugar(rs.getString("lugar"));
 			eventlist.add(event);
 		}
 		rs.close();
@@ -70,13 +70,13 @@ public class EventoData {
 		return eventlist;
 	}
 	
-	public void insertOne(String fecha, String desc) throws SQLException{
+	public void insertOne(String fecha, String lugar) throws SQLException{
 		ConexionMySQL c = new ConexionMySQL();
 		System.out.println("InserOne");
-		String query = "INSERT INTO evento (fecha, descripcion) VALUES (?,?)";
+		String query = "INSERT INTO evento (fecha, lugar) VALUES (?,?)";
 		PreparedStatement pstmt = c.getConnection().prepareStatement(query);
 		pstmt.setString(1, fecha);
-		pstmt.setString(2, desc);
+		pstmt.setString(2, lugar);
 		pstmt.executeUpdate();
 		pstmt.close();
 		c.getConnection().close();
@@ -95,13 +95,13 @@ public class EventoData {
 		System.out.println("Conexion finalziada");
 	}
 	
-	public void updateOne(String id, String fecha, String desc) throws SQLException{
+	public void updateOne(String id, String fecha, String lugar) throws SQLException{
 		ConexionMySQL c = new ConexionMySQL();
 		System.out.println("updateOne");
-		String query = "UPDATE evento SET fecha=?, descripcion=? WHERE idEvento=?";
+		String query = "UPDATE evento SET fecha=?, lugar=? WHERE idEvento=?";
 		PreparedStatement pstmt = c.getConnection().prepareStatement(query);
 		pstmt.setString(1, fecha);
-		pstmt.setString(2, desc);
+		pstmt.setString(2, lugar);
 		pstmt.setString(3, id);
 		pstmt.executeUpdate();
 		pstmt.close();

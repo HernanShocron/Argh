@@ -24,10 +24,10 @@
 					PANEL DE CONTROL ARGH</h1>
 				</div>
 				<div id="PanelUsuario" style= "float: right">
-				Usuario: "Unknown"
+				User
 				<select >
-					<option Onclick="redirigir(perfil)">Perfíl</option>
-					<option OnClick="CerrarSesion()">Cerrar Sesión</option>			
+					<option>Perfíl</option>
+					<option>Cerrar Sesión</option>			
 				</select>
 				</div>
 			</div>

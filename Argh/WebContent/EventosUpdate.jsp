@@ -10,22 +10,18 @@
 <body>
 	<div class="form">
 		<h2>Modificar Evento</h2>
+		<div style="background: green;">
+			${error}
+		</div>
 		<form action="EventosServlet" method="post">
 		    <table>
-		    	<tr>
-		    		<th>Id</th>
-		    		<td><input type="text" name="id" readonly="readonly" value="${id}"></td>
-		    	</tr>
 		        <tr>
 		            <th>Fecha:</th>
-		            <td><input type="text" name="año" size="4" value="${año}">/<input type="text" name="mes" size="2" value="${mes}">/<input type="text" name="dia" size="2" value="${dia}"></td>
+		            <td><input type="text" name="año" size="4" value="${año}" placeholder="AAAA">/<input type="text" name="mes" size="2" value="${mes} " placeholder="MM">/<input type="text" name="dia" size="2" value="${dia}" placeholder="DD"></td>
 		        </tr>
 		        <tr>
-		            <th>Descripcion:</th>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td colspan="2"><textarea name="desc" cols="60" rows="10" >${desc}</textarea></td>
+		            <th>Lugar:</th>
+		            <td><input type="text" name="lugar" value="${lugar}"></td>
 		        </tr>
 		        <tr>
 		        	<td></td>

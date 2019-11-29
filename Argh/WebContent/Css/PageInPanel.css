@@ -22,6 +22,16 @@ div{
 	margin:10px;
 }
 
+.acciones{
+	padding-top: 0%;
+	padding-bottom: 0%;
+	padding-left: 0%;
+	padding-right: 0%;
+	margin:0 px;
+	background-color: transparent;
+	width:100%;
+}
+
 table{
 	margin-top: 1%;
 	border-color: black;
