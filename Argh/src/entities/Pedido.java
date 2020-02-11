@@ -1,12 +1,14 @@
 package entities;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Pedido {
-	private int nroPedido;
-	private String estado;
-	private Mesa mesa;
+	private int nroPedido, idMesa, idMozo;
+	//private String estado;
+	private Time horaEntrega;
+	
 	private ArrayList<LineaPedido> lineasPedido;
 	private float total;
 	
@@ -17,17 +19,30 @@ public class Pedido {
 	public void setNroPedido(int nroPedido) {
 		this.nroPedido = nroPedido;
 	}
-	public String getEstado() {
-		return estado;
+//	public String getEstado() {
+//		return estado;
+//	}
+//	public void setEstado(String estado) {
+//		this.estado = estado;
+//	}
+	
+	public int getIdMesa() {
+		return idMesa;
 	}
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public Time getHoraEntrega() {
+		return horaEntrega;
 	}
-	public Mesa getMesa() {
-		return mesa;
+	public void setHoraEntrega(Time horaEntrega) {
+		this.horaEntrega = horaEntrega;
 	}
-	public void setMesa(Mesa mesa) {
-		this.mesa = mesa;
+	public void setIdMesa(int idMesa) {
+		this.idMesa = idMesa;
+	}
+	public int getIdMozo() {
+		return idMozo;
+	}
+	public void setIdMozo(int idMozo) {
+		this.idMozo = idMozo;
 	}
 	public ArrayList<LineaPedido> getLineasPedido() {
 		return lineasPedido;

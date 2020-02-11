@@ -8,7 +8,7 @@ public class Evento {
 	private int	id;
 	private Date fecha;
 	private String desc;
-	private ArrayList<Mesa> mesas;
+	private ArrayList<Mesas> mesas;
 	private ArrayList<Mozo> mozos;
 	private ArrayList<Producto> productos;
 	
@@ -31,10 +31,10 @@ public class Evento {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public ArrayList<Mesa> getMesas() {
+	public ArrayList<Mesas> getMesas() {
 		return mesas;
 	}
-	public void setMesas(ArrayList<Mesa> mesas) {
+	public void setMesas(ArrayList<Mesas> mesas) {
 		this.mesas = mesas;
 	}
 	public ArrayList<Mozo> getMozos() {
@@ -67,9 +67,9 @@ public class Evento {
 		return año;
 	}
 	
-	public float cerrarCaja(ArrayList<Mesa> mesas) {
+	public float cerrarCaja(ArrayList<Mesas> mesas) {
 		float total=0;
-		for(Mesa m: mesas) {
+		for(Mesas m: mesas) {
 			ArrayList<Pedido> pedidos = m.getPedidos();
 			for(Pedido p: pedidos) {
 				total+= p.getTotal();

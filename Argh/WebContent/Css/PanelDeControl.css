@@ -78,6 +78,23 @@ body{
 			margin-bottom: 5px;
 			margin-left: 2.5%;
 		}
+		.BTNPANELEvento{
+			background-color: transparent;
+			text-align:center;
+			width:95%;
+			margin-left: 2.5%;
+			height:40px;
+			transition-duration: 0.4s;
+			font-weight: bold;
+			text-shadow: 0px 0px 0px rgb(0,0,0);
+	
+		}
+		.BTNPANELEvento:hover{
+			background-color: silver;
+			color: #cf2500;
+			cursor: pointer;
+			text-shadow: 0px 0px 0px rgb(0,0,0);
+		}
 		.BTNPANEL{
 			background-color: transparent;
 			text-align:center;
@@ -90,6 +107,23 @@ body{
 	
 		}
 		.BTNPANEL:hover{
+			background-color: silver;
+			color: #cf2500;
+			cursor: pointer;
+			text-shadow: 0px 0px 0px rgb(0,0,0);
+		}
+		.pedidos {
+			background-color: grey;
+			text-align: center;
+			width:95%;
+			margin-left: 2.5%;
+			height:20px;
+			transition-duration: 0.4s;
+			font-weight: bold;
+			text-shadow: 0px 0px 0px rgb(0,0,0);
+	
+		}
+		.pedidos:hover{
 			background-color: silver;
 			color: #cf2500;
 			cursor: pointer;
@@ -126,3 +160,7 @@ body{
 	text-align: center;
 	padding-top: 25px
 }
+
+
+	
+	

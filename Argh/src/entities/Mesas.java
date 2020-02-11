@@ -2,12 +2,17 @@ package entities;
 
 import java.util.ArrayList;
 
-public class Mesa {
+public class Mesas {
 	private int nroMesa, capacidad;
 	private String estado;
 	private ArrayList<Pedido> pedidos;
 	
 	//Getters & Setters
+	
+	public  Mesas() {
+		this.pedidos=null;
+		
+	}
 	public int getNroMesa() {
 		return nroMesa;
 	}

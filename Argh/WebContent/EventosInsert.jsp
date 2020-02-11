@@ -1,35 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="javax.servlet.http.Cookie" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Agregar Evento</title>
-<link href="Css/form.css" type="text/css" rel="stylesheet" />
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+ <link href="Css/form.css" type="text/css" rel="stylesheet" />
+  
 </head>
+
 <body>
-	<div class="form">
+	<div id="div1" class="form">
 		<h2>Agregar Evento</h2>
-		<form action="EventosServlet" method="post">
-		    <table>
-		        <tr>
-		            <th>Fecha:</th>
-		            <td><input type="text" name="año" size="4">/<input type="text" name="mes" size="2">/<input type="text" name="dia" size="2"></td>
-		        </tr>
-		        <tr>
-		            <th>Descripcion:</th>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td colspan="2"><textarea name="desc" cols="60" rows="10"></textarea></td>
-		        </tr>
-		        <tr>
-		        	<td></td>
-		        	<td><div class="divbuttons"><input type="submit" value="Añadir" name="añadir"></div></td>
-		        </tr>
-		    </table>
+		<form class="formInsert" action="EventosServlet" method="post" >
+	
+		 
+		    <!--  de ambos imput borre los id= -->
+		   		   
+		    <%
+		      String nombre = request.getParameter("nombre");
+		    if (nombre!=null){
+			      String fecha = request.getParameter("fecha");
+%>
+
+		    	<label for='fecha'>  Fecha:  </label>
+		    	<input type='date'  name='fecha' value=<%=fecha %> >
+		    	<label for='nombre'>  Nombre del evento:  </label>
+		    	<input type='text'   id='nombreEvento' name='nombreEvento' value=<%=nombre %>>
+			    <input type='submit' value='Modificar'>
+				<h2> Id del Evento a Modificar: <%= request.getParameter("id")%></h2>
+				<input type='hidden' name='auction' value='Modificar' >
+				<input type='hidden' name='id' value=<%= request.getParameter("id")%>>
+
+		  <% }  else {%>  
+		   
+		    	
+		    
+		   <label for='fecha'>  Fecha:  </label>
+	    	<input type='date'  name='fecha' value='' >
+			
+	    	<label for='nombre'>  Nombre del evento:  </label>
+	    	<input type='text'   id='nombreEvento' name='nombreEvento' >
+	    	<input type='submit' value='Añadir'>
+			<input type='hidden' name='auction' value='Insert' >
+		   <%} %> 
+
+
+
+		    
+		   
 		</form>
-		<a href="Eventos.jsp"><button>Volver</button></a>
+		<a href="Eventos.jsp"><button >Volver</button></a>
 	</div>
+<script>
+
+
+</script>
 </body>
+
+
 </html>
